@@ -1,6 +1,9 @@
 import { Button, IconButton, makeStyles } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
 import React from "react";
+import Login from "../Login/Login";
+import SignUp from "../Login/SignUp";
+import Hotels from "./Hotels/Hotels";
 
 const Home = () => {
   const useStyles = makeStyles((theme) => ({
@@ -14,6 +17,10 @@ const Home = () => {
   const classes = useStyles();
   return (
     <div>
+      <Hotels />
+      <button className="btn">Button</button>
+      <Login />
+      <SignUp />
       <h1>Home</h1>
       <Button variant="contained" color="primary">
         Primary
