@@ -17,7 +17,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import { Link } from "react-router-dom";
 
 const SignUp = () => {
-  const paperStyle = { padding: "30px 20px", width: 300, margin: "20px auto" };
+  const paperStyle = { padding: "30px 20px", width: 380, margin: "20px auto" };
   const headerStyle = { margin: 0 };
   const avatarStyle = { backgroundColor: "#1bbd7e" };
   const marginTop = { marginTop: 5 };
@@ -72,7 +72,7 @@ const SignUp = () => {
           />
           <Typography>
             {" "}
-            Already have an account ?<Link to="/login">Sign Up</Link>
+            Already have an account ? <Link to="/login"> Log In</Link>
           </Typography>
           <Button type="submit" variant="contained" color="primary">
             Sign up

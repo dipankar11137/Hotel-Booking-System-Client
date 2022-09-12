@@ -1,36 +1,34 @@
 import { Button, IconButton, makeStyles } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
 import React from "react";
+import Footer from "../../Share/Footer";
 import Login from "../Login/Login";
 import SignUp from "../Login/SignUp";
+import Banner from "./Banner";
 import Hotels from "./Hotels/Hotels";
+import LastUpdate from "./LastUpdate";
+import SSP from "./SSP";
+import TimeDate from "./TimeDate";
 
 const Home = () => {
-  const useStyles = makeStyles((theme) => ({
-    margin: {
-      margin: theme.spacing(1),
-    },
-    extendedIcon: {
-      marginRight: theme.spacing(1),
-    },
-  }));
-  const classes = useStyles();
   return (
-    <div>
-      <Hotels />
-      <button className="btn">Button</button>
-      <Login />
-      <SignUp />
-      <h1>Home</h1>
-      <Button variant="contained" color="primary">
-        Primary
-      </Button>
-      <Button variant="contained" color="secondary" disableElevation>
-        Disable elevation
-      </Button>
-      <IconButton aria-label="delete" className={classes.margin}>
-        <DeleteIcon fontSize="large" />
-      </IconButton>
+    <div className="">
+      <div className="grid grid-cols-2 gap-4 mt-2">
+        <div>
+          <h1>Dipu</h1>
+        </div>
+        <div>
+          <Banner />
+        </div>
+      </div>
+      {/* <Hotels /> */}
+
+      <TimeDate />
+      <LastUpdate />
+      <div className="mt-16 mb-28 pl-48">
+        <SSP />
+      </div>
+      <Footer />
     </div>
   );
 };
