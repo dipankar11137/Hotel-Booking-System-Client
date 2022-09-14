@@ -5,6 +5,7 @@ import Footer from "../../Share/Footer";
 import Login from "../Login/Login";
 import SignUp from "../Login/SignUp";
 import Banner from "./Banner";
+import HomeHotels from "./Hotels/HomeHotels";
 import Hotels from "./Hotels/Hotels";
 import LastUpdate from "./LastUpdate";
 import SearchButton from "./SearchButton";
@@ -22,7 +23,8 @@ const Home = () => {
           <Banner />
         </div>
       </div>
-      <Hotels />
+      {/* <Hotels /> */}
+      <HomeHotels />
 
       <TimeDate />
       <LastUpdate />
