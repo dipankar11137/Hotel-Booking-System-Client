@@ -7,6 +7,7 @@ import SignUp from "../Login/SignUp";
 import Banner from "./Banner";
 import Hotels from "./Hotels/Hotels";
 import LastUpdate from "./LastUpdate";
+import SearchButton from "./SearchButton";
 import SSP from "./SSP";
 import TimeDate from "./TimeDate";
 
@@ -14,14 +15,14 @@ const Home = () => {
   return (
     <div className="">
       <div className="grid grid-cols-2 gap-4 mt-2">
-        <div>
-          <h1>Dipu</h1>
+        <div className="  flex justify-center align-center ">
+          <SearchButton />
         </div>
         <div>
           <Banner />
         </div>
       </div>
-      {/* <Hotels /> */}
+      <Hotels />
 
       <TimeDate />
       <LastUpdate />

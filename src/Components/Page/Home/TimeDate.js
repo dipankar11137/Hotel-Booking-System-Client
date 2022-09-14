@@ -50,10 +50,12 @@ const TimeDate = () => {
   const [sValue, setSValue] = React.useState(options[0]);
   const [inputValue, setInputValue] = React.useState("");
 
+  console.log(inputValue);
+
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <Grid item xs={12}>
+        <Grid item xs={9}>
           <Paper className={classes.paper}>
             <div>
               {/* <div>{`sValue: ${sValue !== null ? `'${sValue}'` : "null"}`}</div>
@@ -72,13 +74,13 @@ const TimeDate = () => {
                 options={options}
                 sx={{ width: 300 }}
                 renderInput={(params) => (
-                  <TextField {...params} label="Controllable" />
+                  <TextField {...params} label="Search Hotel" />
                 )}
               />
             </div>
           </Paper>
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={10} sm={5}>
           <Paper className={classes.paper}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DateRangePicker
