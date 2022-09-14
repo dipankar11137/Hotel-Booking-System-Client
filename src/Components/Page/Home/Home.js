@@ -5,8 +5,10 @@ import Footer from "../../Share/Footer";
 import Login from "../Login/Login";
 import SignUp from "../Login/SignUp";
 import Banner from "./Banner";
+import Cards from "./Card/Cards";
 import HomeHotels from "./Hotels/HomeHotels";
 import Hotels from "./Hotels/Hotels";
+import RoomUpdate from "./Hotels/RoomUpdate";
 import LastUpdate from "./LastUpdate";
 import SearchButton from "./SearchButton";
 import SSP from "./SSP";
@@ -24,10 +26,13 @@ const Home = () => {
         </div>
       </div>
       {/* <Hotels /> */}
+      <Cards />
       <HomeHotels />
 
-      <TimeDate />
+      {/* <TimeDate /> */}
+
       <LastUpdate />
+      <RoomUpdate />
       <div className="mt-16 mb-28 pl-48">
         <SSP />
       </div>

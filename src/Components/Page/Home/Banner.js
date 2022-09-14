@@ -33,21 +33,21 @@ const Banner = () => {
       >
         <SwiperSlide>
           <img
-            className="object-fill w-full h-96"
+            className="object-fill w-full h-96 rounded-lg pic-style"
             src={banner1}
             alt="image slide 1"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            className="object-fill w-full h-96"
+            className="object-fill w-full h-96 rounded-lg pic-style"
             src={banner2}
             alt="image slide 2"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            className="object-fill w-full h-96"
+            className="object-fill w-full h-96 rounded-lg pic-style"
             src={banner3}
             alt="image slide 3"
           />

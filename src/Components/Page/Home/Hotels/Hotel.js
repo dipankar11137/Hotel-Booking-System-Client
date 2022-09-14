@@ -1,6 +1,7 @@
 import React from "react";
 import BeachAccessIcon from "@material-ui/icons/BeachAccess";
 import SportsRugbyIcon from "@material-ui/icons/SportsRugby";
+import "../../../Css/PicStyle.css";
 //
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
@@ -86,7 +87,11 @@ const Hotel = ({ hotel }) => {
     <div className=" p-2 mt-3 bg-green-100 rounded-3xl shadow-2xl hover:shadow-inner hover:bg-lime-100 border-red-700">
       <div className="grid lg:grid-cols-3 gap-1">
         <div className="h-56">
-          <img className="h-60 rounded-3xl w-80" src={hotel?.img1} alt="" />
+          <img
+            className="h-60 rounded-3xl w-80 pic-style"
+            src={hotel?.img1}
+            alt=""
+          />
         </div>
         <div>
           <h1 className="text-3xl font-bold text-blue-700">{hotel?.name}</h1>
