@@ -8,7 +8,7 @@ const Hotels = () => {
   // console.log("param", location);
   const [hotels, setHotels] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/hotels/?${location}`)
+    fetch(`https://hotel-bocking.onrender.com/hotels/?${location}`)
       .then((res) => res.json())
       .then((data) => setHotels(data));
   }, [hotels]);
@@ -18,7 +18,7 @@ const Hotels = () => {
   //   isLoading,
   //   refetch,
   // } = useQuery("hotels", () =>
-  //   fetch(`http://localhost:5000/hotels`, {
+  //   fetch(`https://hotel-bocking.onrender.com/hotels`, {
   //     method: "GET",
   //     headers: {},
   //   }).then((res) => res.json())

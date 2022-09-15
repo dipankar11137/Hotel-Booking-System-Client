@@ -33,7 +33,7 @@ const SignUp = () => {
   }
 
   const createDBUser = (name, email) => {
-    fetch(`http://localhost:5000/${email}`, {
+    fetch(`https://hotel-bocking.onrender.com/${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

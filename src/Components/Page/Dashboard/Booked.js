@@ -19,7 +19,7 @@ const Booked = () => {
     isLoading,
     refetch,
   } = useQuery("hotels", () =>
-    fetch(`http://localhost:5000/hotels/${id?.id}`, {
+    fetch(`https://hotel-bocking.onrender.com/hotels/${id?.id}`, {
       method: "GET",
       headers: {},
     }).then((res) => res.json())

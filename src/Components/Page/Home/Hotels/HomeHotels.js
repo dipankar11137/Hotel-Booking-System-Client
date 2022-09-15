@@ -4,7 +4,7 @@ import Hotel from "./Hotel";
 const HomeHotels = () => {
   const [hotels, setHotels] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/hotels/`)
+    fetch(`https://hotel-bocking.onrender.com/hotels/`)
       .then((res) => res.json())
       .then((data) => setHotels(data));
   }, [hotels]);
