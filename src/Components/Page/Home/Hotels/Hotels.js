@@ -23,6 +23,7 @@ const Hotels = () => {
   //     headers: {},
   //   }).then((res) => res.json())
   // );
+
   return (
     <div>
       <h1 className="text-center text-3xl  font-bold py-3 uppercase text-blue-600">

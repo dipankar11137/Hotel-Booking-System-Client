@@ -12,7 +12,7 @@ const Card = ({ card }) => {
     <button onClick={handleButton}>
       <div className="w-72 h-72">
         <img
-          className="w-64 h-56 rounded-xl hover:animate-pulse pic-style"
+          className="w-64 h-56 rounded-xl hover:animate-pulse pic-style hover:mb-3"
           src={img2}
           alt=""
         />

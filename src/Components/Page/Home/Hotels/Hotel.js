@@ -22,7 +22,15 @@ import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
 import { Popover, TextareaAutosize } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
-// popper
+import { useForm } from "react-hook-form";
+// shere
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+} from "react-share";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -64,25 +72,32 @@ const style = {
 const Hotel = ({ hotel }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+  const navigate = useNavigate();
   //   modal
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  // love
+  const handleLoveCount = (id) => {
+    console.log(id);
+  };
   //   comment
-  const [sValue, setSValue] = React.useState("");
-  const [inputValue, setInputValue] = React.useState("");
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
-  //   popper
-
-  //   comment
-  const handleComment = () => {
-    console.log("get");
-    console.log(inputValue);
+  const { register, handleSubmit } = useForm();
+  const handleComment = (data) => {
+    console.log(data);
+    setOpen(false);
   };
+  // Book
+  const handleBook = (id) => {
+    navigate(`/booking/${id}`);
+  };
+  // share
+  const shareUrl =
+    "https://www.booking.com/hotel/bd/best-western-heritage.en-gb.html?aid=1610687&label=coxs-bazar-6fj2tMEqobmP1SKHh4sjPwS379589678547%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-297601666555%3Akwd-308486685033%3Alp9069450%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YfpWGnRw6lOGgfEoJVv7zYo&sid=06a91f3de801dcff9aff29487ad562f9";
   return (
     <div className=" p-2 mt-3 bg-green-100 rounded-3xl shadow-2xl hover:shadow-inner hover:bg-lime-100 border-red-700">
       <div className="grid lg:grid-cols-3 gap-1">
@@ -133,7 +148,10 @@ const Hotel = ({ hotel }) => {
               <h1 className="text-2xl font-bold">$ {hotel?.dPrice}</h1>
               <p>$ 15 taxes and charges</p>
               <div className="gap-2 flex justify-end mt-2">
-                <button className=" hover:bg-blue-500 bg-blue-700 text-white font-bold uppercase px-2 py-2 rounded-md  mt-2 ">
+                <button
+                  onClick={() => handleBook(hotel?._id)}
+                  className=" hover:bg-blue-500 bg-blue-700 text-white font-bold uppercase px-2 py-2 rounded-md  mt-2 "
+                >
                   Booked
                 </button>
               </div>
@@ -145,7 +163,10 @@ const Hotel = ({ hotel }) => {
       <div>
         <CardActions disableSpacing>
           <div className="flex justify-end w-full">
-            <button className="text-red-600 ">
+            <button
+              onClick={() => handleLoveCount(hotel?._id)}
+              className="text-red-600 "
+            >
               <FavoriteIcon />
             </button>
             {/* favicon  */}
@@ -164,33 +185,44 @@ const Hotel = ({ hotel }) => {
                 aria-labelledby="keep-mounted-modal-title"
                 aria-describedby="keep-mounted-modal-description"
               >
-                <Box sx={style}>
-                  <TextareaAutosize
-                    value={sValue}
-                    onChange={(event, newValue) => {
-                      setSValue(newValue);
-                    }}
-                    inputValue={inputValue}
-                    onInputChange={(event, newInputValue) => {
-                      setInputValue(newInputValue);
-                    }}
-                    aria-label="minimum height"
-                    minRows={3}
-                    placeholder="Please Write Here"
-                    style={{ width: 300, border: "3px blue solid" }}
-                  />
-                  <Button
-                    onClick={handleComment}
-                    variant="contained"
-                    endIcon={<SendIcon />}
-                  >
-                    Send
-                  </Button>
+                <Box className="rounded-xl" sx={style}>
+                  <form onSubmit={handleSubmit(handleComment)}>
+                    <p>Please Write</p>
+                    <textarea
+                      placeholder="Input Your Comment"
+                      className="bg-indigo-200 rounded-lg p-3 pr-4"
+                      {...register("comment")}
+                    ></textarea>
+
+                    <input
+                      className="hidden"
+                      value={hotel?.name}
+                      type="text"
+                      {...register("name")}
+                    />
+                    <input
+                      className="hidden"
+                      value={hotel?._id}
+                      type="text"
+                      {...register("_id")}
+                    />
+
+                    <input
+                      className="bg-indigo-600 p-2  rounded-lg cursor-pointer font-bold uppercase text-white ml-4 -pt-3"
+                      type="submit"
+                    />
+                  </form>
                 </Box>
               </Modal>
             </div>
+            {/* shere */}
             <button>
-              <ShareIcon />
+              <FacebookShareButton url={shareUrl}>
+                <FacebookIcon className="h-6"></FacebookIcon>
+              </FacebookShareButton>
+              <WhatsappShareButton url={shareUrl}>
+                <WhatsappIcon className="h-6"></WhatsappIcon>
+              </WhatsappShareButton>
             </button>
           </div>
           <IconButton
@@ -230,10 +262,19 @@ const Hotel = ({ hotel }) => {
               just tender, 5 to 7 minutes more. (Discard any mussels that don’t
               open.)
             </Typography>
-            <Typography>
-              Set aside off of the heat to let rest for 10 minutes, and then
-              serve.
-            </Typography>
+            <Typography>{hotel?.description}</Typography>
+            <div className="flex gap-5 justify-center mt-3">
+              <img
+                src={hotel?.img2}
+                alt=""
+                className="h-64 w-72 pic-style rounded-lg hover:w-96 hover:h-96"
+              />
+              <img
+                src={hotel?.img3}
+                alt=""
+                className="h-64 w-72 pic-style rounded-lg hover:w-96 hover:h-96"
+              />
+            </div>
           </CardContent>
         </Collapse>
       </div>

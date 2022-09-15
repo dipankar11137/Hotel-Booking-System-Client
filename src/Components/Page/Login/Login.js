@@ -43,7 +43,7 @@ const Login = () => {
   //     useSignInWithEmailAndPassword(auth);
 
   //   let signInError;
-  //   const navigate = useNavigate();
+  const navigate = useNavigate();
   //   const location = useLocation();
 
   //   let from = location.state?.from?.pathname || "/";
@@ -75,6 +75,7 @@ const Login = () => {
     //   }
     // );
     // console.log(accessToken);
+    navigate("/");
   };
 
   return (

@@ -1,5 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Contact from "./Components/Page/Contact/Contact";
+import Booked from "./Components/Page/Dashboard/Booked";
 import Home from "./Components/Page/Home/Home";
 import Hotels from "./Components/Page/Home/Hotels/Hotels";
 import Ratting from "./Components/Page/Home/Ratting";
@@ -15,6 +17,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/hostels/:location" element={<Hotels />} />
+        <Route path="/booking/:id" element={<Booked />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<SignUp />} />
       </Routes>

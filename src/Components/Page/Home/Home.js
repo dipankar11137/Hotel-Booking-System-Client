@@ -7,12 +7,10 @@ import SignUp from "../Login/SignUp";
 import Banner from "./Banner";
 import Cards from "./Card/Cards";
 import HomeHotels from "./Hotels/HomeHotels";
-import Hotels from "./Hotels/Hotels";
 import RoomUpdate from "./Hotels/RoomUpdate";
 import LastUpdate from "./LastUpdate";
 import SearchButton from "./SearchButton";
 import SSP from "./SSP";
-import TimeDate from "./TimeDate";
 
 const Home = () => {
   return (
@@ -21,7 +19,7 @@ const Home = () => {
         <div className="  flex justify-center align-center ">
           <SearchButton />
         </div>
-        <div>
+        <div className="pr-5">
           <Banner />
         </div>
       </div>
