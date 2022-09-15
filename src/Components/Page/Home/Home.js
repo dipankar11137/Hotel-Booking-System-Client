@@ -15,7 +15,7 @@ import SSP from "./SSP";
 const Home = () => {
   return (
     <div className="">
-      <div className="grid grid-cols-2 gap-4 mt-2">
+      <div className="lg:grid lg:grid-cols-2 lg:gap-4 mt-2">
         <div className="  flex justify-center align-center ">
           <SearchButton />
         </div>

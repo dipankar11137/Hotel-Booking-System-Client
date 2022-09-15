@@ -31,6 +31,7 @@ import {
   WhatsappIcon,
 } from "react-share";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -80,6 +81,7 @@ const Hotel = ({ hotel }) => {
   // love
   const handleLoveCount = (id) => {
     console.log(id);
+    toast.success("Successful Like This");
   };
   //   comment
 
@@ -89,6 +91,7 @@ const Hotel = ({ hotel }) => {
   const { register, handleSubmit } = useForm();
   const handleComment = (data) => {
     console.log(data);
+    toast.success(" Successfully Add Your Comment");
     setOpen(false);
   };
   // Book
@@ -198,7 +201,7 @@ const Hotel = ({ hotel }) => {
                       className="hidden"
                       value={hotel?.name}
                       type="text"
-                      {...register("name")}
+                      {...register("name", { required: true })}
                     />
                     <input
                       className="hidden"

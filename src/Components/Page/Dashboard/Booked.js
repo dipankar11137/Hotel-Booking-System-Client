@@ -1,10 +1,12 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useQuery } from "react-query";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Booked = () => {
   const id = useParams();
+  const navigator = useNavigate();
   const {
     register,
     handleSubmit,
@@ -22,17 +24,20 @@ const Booked = () => {
       headers: {},
     }).then((res) => res.json())
   );
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+    navigator("/");
+    toast.success("Booked Is Successful");
+  };
 
   return (
     <div>
-      <h1>booked : {hotel?.name}</h1>
       <div>
         <form
-          className="flex justify-center gap-3"
+          className="flex justify-center gap-3 "
           onSubmit={handleSubmit(onSubmit)}
         >
-          <div className="form-control w-full max-w-xs">
+          <div className="form-control w-full max-w-xs bg-indigo-100 p-5 mt-5 rounded">
             {/* name */}
             <label className="label">
               <span className="label-text">Your Name</span>

@@ -87,12 +87,7 @@ const Login = () => {
           </Avatar>
           <h2>Log In</h2>
         </Grid>
-        <TextField
-          label="Username"
-          placeholder="Enter username"
-          fullWidth
-          required
-        />
+        <TextField label="Email" placeholder="Enter Email" fullWidth required />
         <TextField
           label="Password"
           placeholder="Enter password"
@@ -119,7 +114,10 @@ const Login = () => {
         </Typography>
         <Typography>
           {" "}
-          Do you have an account ?<Link to="/register">Sign Up</Link>
+          Do you have an account ?
+          <Link to="/register">
+            <spam className="text-blue-500 font-bold"> Sign Up</spam>
+          </Link>
         </Typography>
       </Paper>
     </Grid>

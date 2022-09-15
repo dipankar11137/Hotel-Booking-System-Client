@@ -13,6 +13,8 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
+import logo from "../image/icon/icon.png";
 // import { Link } from "react-router-dom";
 
 const pages = ["Products", "Pricing", "Blog"];
@@ -40,7 +42,10 @@ const ResponsiveAppBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
+          <Link href="/">
+            <img className="h-14 w-14 pic-style" src={logo} alt="" />
+          </Link>
           <Typography
             variant="h6"
             noWrap
@@ -89,19 +94,21 @@ const ResponsiveAppBar = () => {
               }}
             >
               <MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">Contact</Typography>
+                <Link href="/contact">
+                  <Typography textAlign="center">Contact</Typography>
+                </Link>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">Blog</Typography>
+                <Typography textAlign="center">About</Typography>
               </MenuItem>
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
             component="a"
-            href=""
+            href="/"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -113,7 +120,7 @@ const ResponsiveAppBar = () => {
               textDecoration: "none",
             }}
           >
-            LOGO
+            <HomeIcon />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
@@ -121,16 +128,19 @@ const ResponsiveAppBar = () => {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              Home
+              <HomeIcon />
             </Button>
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              contact
-            </Button>
+            <Link href="/contact">
+              {" "}
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                contact
+              </Button>
+            </Link>
             <Button
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
@@ -168,11 +178,12 @@ const ResponsiveAppBar = () => {
               <MenuItem onClick={handleCloseUserMenu}>
                 <Typography textAlign="center">Setting</Typography>
               </MenuItem>
-              <Link href="/login">
-                <MenuItem onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">Log In</Typography>
-                </MenuItem>{" "}
-              </Link>
+              <MenuItem onClick={handleCloseUserMenu}>
+                <Link className="no-underline" href="/login">
+                  {" "}
+                  <Typography className="no-underline">Log In</Typography>
+                </Link>
+              </MenuItem>{" "}
             </Menu>
           </Box>
         </Toolbar>

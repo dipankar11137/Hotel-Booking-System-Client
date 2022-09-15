@@ -10,7 +10,7 @@ const Cards = () => {
   }, [hotels]);
   return (
     <div className="mt-10">
-      <div className="grid grid-cols-5 px-5 ml-10">
+      <div className="lg:grid lg:grid-cols-5 px-5 ml-10">
         {hotels.slice(0, 5).map((card) => (
           <Card key={hotels._id} card={card}></Card>
         ))}

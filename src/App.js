@@ -9,6 +9,10 @@ import Login from "./Components/Page/Login/Login";
 import SignUp from "./Components/Page/Login/SignUp";
 import Navbar from "./Components/Share/Navbar";
 
+// toastify
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   return (
     <div>
@@ -22,6 +26,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<SignUp />} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
