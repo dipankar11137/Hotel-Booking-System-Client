@@ -106,7 +106,7 @@ const Hotel = ({ hotel }) => {
       <div className="grid lg:grid-cols-3 gap-1">
         <div className="h-56">
           <img
-            className="h-60 rounded-3xl w-80 pic-style"
+            className="h-60 rounded-3xl w-72 pic-style"
             src={hotel?.img1}
             alt=""
           />
