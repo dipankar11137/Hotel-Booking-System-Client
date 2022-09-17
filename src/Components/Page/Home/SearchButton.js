@@ -37,7 +37,7 @@ const SearchButton = () => {
       <div className="flex justify-center">
         <button
           onClick={handleSubmit}
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-4 rounded lg:w-96 mt-2 text-2xl"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-4 rounded lg:w-96 mt-2 text-2xl"
         >
           Search Hotel
         </button>

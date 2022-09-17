@@ -5,10 +5,10 @@ import Hotel from "./Hotel";
 
 const Hotels = () => {
   const location = useParams();
-  // console.log("param", location);
+  console.log("param", location.location);
   const [hotels, setHotels] = useState([]);
   useEffect(() => {
-    fetch(`https://hotel-bocking.onrender.com/hotels/?${location}`)
+    fetch(`https://hotel-bocking.onrender.com/hotels/?${location.location}`)
       .then((res) => res.json())
       .then((data) => setHotels(data));
   }, [hotels]);
